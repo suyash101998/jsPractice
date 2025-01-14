@@ -4,8 +4,8 @@ Function.prototype.myBind = function(context= {}, ...args){
     throw new Error("Not bindable");
   }
   context.func = this;
-  return function(...newArgs){
-    return context.func(...args,newArgs);
+  return function(...newArgs){ //as new function created can also be given args.
+    return context.func(...args,newArgs); // combining args provided during bind and during calling.
   }
 };
 const person = {
